@@ -65,7 +65,7 @@
 
 * ❌ ไม่มี Docker
 
-* ❌ ไม่มี npm / node โดย default — **ไม่ต้องติดตั้ง Chart.js เอง** มีไฟล์เตรียมไว้แล้วที่ `vendor/chart.umd.js` (Chart.js v4.4.1) ในโฟลเดอร์เดียวกับไฟล์นี้ วิธีใช้ดูหัวข้อ 4.10
+* ❌ **ห้ามใช้ npm / node สร้างหรือรันโปรเจกต์** (ห้าม Vite, React, webpack ฯลฯ) — **ไม่ต้องติดตั้ง Chart.js เอง** ผู้สอนลงไว้แล้วที่ `node_modules/chart.js/dist/chart.umd.js` (Chart.js v4.4.1) ในโฟลเดอร์เดียวกับไฟล์นี้ วิธีใช้ดูหัวข้อ 4.10
 
 * ❌ ห้ามใช้ library กราฟตัวอื่น (Plotly, ECharts, Recharts, D3 ฯลฯ) และห้ามใช้ CSS framework (Tailwind, Bootstrap ฯลฯ) เพราะจะทับธีม B.Grimm
 
@@ -231,7 +231,7 @@
 
 **Chart.js (เตรียมไว้แล้ว ไม่ต้องติดตั้ง)**
 
-* ไฟล์อยู่ที่ `vendor/chart.umd.js` ในโฟลเดอร์เดียวกับไฟล์นี้ **คัดลอกเข้าโปรเจกต์** เป็น `static/vendor/chart.umd.js` แล้วโหลดด้วย Relative Path:
+* ไฟล์อยู่ที่ `node_modules/chart.js/dist/chart.umd.js` ในโฟลเดอร์เดียวกับไฟล์นี้ **คัดลอกเข้าโปรเจกต์** เป็น `static/vendor/chart.umd.js` แล้วโหลดด้วย Relative Path:
 
   ```html
   <script src="static/vendor/chart.umd.js"></script>
@@ -278,7 +278,7 @@ uv init <project-name>
 cd <project-name>
 uv add fastapi uvicorn httpx pydantic-settings
 mkdir -p static/vendor
-cp ../vendor/chart.umd.js static/vendor/           # Chart.js ที่เตรียมไว้ (ปรับ path ให้ชี้ไปโฟลเดอร์ที่มี AGENTS.md)
+cp ../node_modules/chart.js/dist/chart.umd.js static/vendor/           # Chart.js ที่เตรียมไว้ (ปรับ path ให้ชี้ไปโฟลเดอร์ที่มี AGENTS.md)
 ```
 
 ### 5.2 โครงสร้างไฟล์มาตรฐาน
